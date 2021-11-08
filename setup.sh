@@ -112,7 +112,7 @@ if [ ! -d ~/.nb ]; then
 fi
 
 # ccmenu
-defaults import net.sourceforge.cruisecontrol.CCMenu ccmenu.plist
+# defaults import net.sourceforge.cruisecontrol.CCMenu ccmenu.plist
 
 # logrotate
 ln -sf $DIR/logrotate.d/*.conf /usr/local/etc/logrotate.d/
