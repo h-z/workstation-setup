@@ -139,3 +139,6 @@ test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
 # https://github.com/Homebrew/homebrew-core/issues/59484
 # https://discourse.brew.sh/t/why-does-tmuxinator-sets-gem-home/7296
 unset -v GEM_HOME
+
+# Prefer version 16 (the stable version) of node.
+export PATH="/usr/local/opt/node@16/bin:$PATH"
