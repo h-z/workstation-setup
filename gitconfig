@@ -40,7 +40,7 @@
 [format]
   pretty = format:"%C(yellow)%<(12)%cd%Creset %<(50)%s | %C(auto)%h%Creset%C(auto)%d%Creset | %Cgreen%an%Creset"
 [log]
-  date = relative
+  date = format:%Y-%m-%d %H:%M
 [merge]
   ff = only
 [remote "origin"]
