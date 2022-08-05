@@ -11,11 +11,11 @@
   br = branch
   lg = log --graph
   lup = log @{u}... --left-right --graph
-  lum = log origin/master... --left-right --graph
+  lum = log origin/main... --left-right --graph
   mup = merge @{u}
-  rum = rebase origin/master
+  rum = rebase origin/main
   age = !"for branch in `git branch -r | awk '{print $1}'`; do echo `git log -1 $branch --pretty=format:"%at:%%$branch%%%cr%%%cn%n"`;done | column -t -s'%' | sort -nr | cut -d ':' -f 2"
-  rollback = !"git diff origin/master.. --name-only -- db/migrate | sed 's/db\\/migrate\\///g' | sort -r | xargs -I% rake db:migrate:down VERSION=%"
+  rollback = !"git diff origin/main.. --name-only -- db/migrate | sed 's/db\\/migrate\\///g' | sort -r | xargs -I% rake db:migrate:down VERSION=%"
   w = whatchanged
   lall = log --branches --tags --remotes --graph
   srp = !"git stash save -u 'wip' && rake && git push && git stash pop"
