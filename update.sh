@@ -3,7 +3,7 @@
 set -ex
 
 pushd ~/.workstation
-git switch master
+git switch main
 git pull
 ./setup.sh
 popd
