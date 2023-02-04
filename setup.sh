@@ -82,7 +82,8 @@ fi
 mkdir -p ~/projects
 
 # preserve git author
-GIT_AUTHOR=$(git config --get git-together.active | tr + ' ')
+GIT_USER_EMAIL=$(git config --get --global user.email)
+GIT_USER_NAME=$(git config --get --global user.name)
 
 # dotfiles
 ln -sf $DIR/zshrc ~/.zshrc
@@ -109,6 +110,10 @@ git config --global commit.template ~/.git-author-template
 
 # heroku cli
 heroku plugins:install api heroku-builds
+
+# restore git author
+git config --global user.name "$GIT_USER_NAME"
+git config --global user.email $GIT_USER_EMAIL
 
 # ccmenu
 # defaults import net.sourceforge.cruisecontrol.CCMenu ccmenu.plist
