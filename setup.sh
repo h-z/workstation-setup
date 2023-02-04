@@ -101,9 +101,6 @@ git config --global commit.template ~/.git-author-template
 # heroku cli
 heroku plugins:install api heroku-builds
 
-# set git author
-git author $GIT_AUTHOR
-
 # ccmenu
 # defaults import net.sourceforge.cruisecontrol.CCMenu ccmenu.plist
 
