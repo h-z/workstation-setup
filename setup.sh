@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [[ `uname -m` == 'arm64' ]]; then
-  HOMEBREW_DIR="/opt/homebrew"
-else
-  HOMEBREW_DIR="/usr/local"
-fi
+HOMEBREW_DIR=$(brew --prefix)
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd $DIR

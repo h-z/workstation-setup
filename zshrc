@@ -1,8 +1,5 @@
-if [[ `uname -m` == 'arm64' ]]; then
-  export HOMEBREW_INSTALL_DIR='/opt/homebrew'
-else
-  export HOMEBREW_INSTALL_DIR='/usr/local'
-fi
+export HOMEBREW_INSTALL_DIR=$(brew --prefix)
+export FREEDESKTOP_MIME_TYPES_PATH=$(brew --prefix)/share/mime/packages/freedesktop.org.xml
 
 # Set up Homebrew zsh completions
 if type brew &>/dev/null; then
@@ -150,5 +147,5 @@ unset -v GEM_HOME
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash completion
+[ -s "$HOMEBREW_INSTALL_DIR/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_INSTALL_DIR/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOMEBREW_INSTALL_DIR/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_INSTALL_DIR/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
