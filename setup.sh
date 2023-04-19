@@ -15,7 +15,7 @@ set -ex
 brew bundle
 brew services restart postgresql@14
 brew services restart redis
-brew services restart logrotate
+#brew services restart logrotate
 
 # Install oh my zsh
 if [ ! -d ~/.oh-my-zsh ]; then
@@ -119,5 +119,3 @@ git config --global user.email $GIT_USER_EMAIL
 # ccmenu
 # defaults import net.sourceforge.cruisecontrol.CCMenu ccmenu.plist
 
-# logrotate
-ln -sf $DIR/logrotate.d/*.conf $HOMEBREW_DIR/etc/logrotate.d/
